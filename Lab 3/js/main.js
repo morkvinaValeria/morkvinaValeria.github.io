@@ -20,7 +20,7 @@ document.querySelector('#form-min-max').onsubmit = function (event) {
     document.querySelector('#form-min-max').reset();
     alert('MAX = '+max + ', MIN = '+ min);
 }
-window.addEventListener('load', function () {
+/*window.addEventListener('load', function () {
     if (getCookie('max')) {
         document.querySelector('#form-min-max').style = "display:none;";
         setTimeout(() => {
@@ -31,7 +31,7 @@ window.addEventListener('load', function () {
             }
         }, 100);
     }
-})
+})*/
 
 
 function swapBlocks(x,y)
