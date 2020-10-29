@@ -20,18 +20,18 @@ document.querySelector('#form-min-max').onsubmit = function (event) {
     document.querySelector('#form-min-max').reset();
     alert('MAX = '+max + ', MIN = '+ min);
 }
-/*window.addEventListener('load', function () {
+window.addEventListener('load', function () {
     if (getCookie('max')) {
         document.querySelector('#form-min-max').style = "display:none;";
         setTimeout(() => {
             if (confirm(getCookie('max') + "\nAfter you click \"OK\" cookies will be deleted !!!")) {
-                document.cookie = 'max=' + getCookie('max') + '; max-age=0';
+                document.cookie = 'max =' + getCookie('max') + '; max-age=0';
                 alert('Cookies removed !!!');
                 location.reload()
             }
         }, 100);
     }
-})*/
+})
 
 
 function swapBlocks(x,y)
