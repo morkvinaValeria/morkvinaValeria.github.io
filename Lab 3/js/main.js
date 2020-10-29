@@ -31,7 +31,18 @@ window.addEventListener('load', function () {
             }
         }, 100);
     }
+    if (getCookie('min')) {
+        document.querySelector('#form-min-max').style = "display:none;";
+        setTimeout(() => {
+            if (confirm(getCookie('min') + "\nAfter you click \"OK\" cookies will be deleted !!!")) {
+                document.cookie = 'min =' + getCookie('min') + '; max-age=0';
+                alert('Cookies removed !!!');
+                location.reload()
+            }
+        }, 100);
+    }
 })
+
 
 
 function swapBlocks(x,y)
