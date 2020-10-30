@@ -58,7 +58,8 @@ document.getElementById('form-bold').onchange = function (event) {
 }
 
 
-  if (localStorage.getItem(localStorageKey)) {
+ function loadFontWeight(localStorageKey) {
+    if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
             document.getElementById('side-box-2').style.fontWeight = 'bold';
             document.querySelector('form-bold').setAttribute("checked");
@@ -68,6 +69,7 @@ document.getElementById('form-bold').onchange = function (event) {
             document.getElementById('form-bold').removeAttribute("checked"); 
         }
     }
+}
 
 function swapBlocks(x,y)
 {
