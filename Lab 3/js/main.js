@@ -45,7 +45,7 @@ window.addEventListener('load', function () {
 
 //task4
 //loadFontWeight('doFontWeight')
-document.getElementById('form-bold').onchange = function (event) {
+document.getElementById('form-bold input[name="to-bold"]').onchange = function (event) {
     event.preventDefault();
     if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
         var doFontWeight = true;
