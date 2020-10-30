@@ -45,28 +45,28 @@ window.addEventListener('load', function () {
 
 //task4
 loadFontWeight('doFontWeight')
-document.querySelector('#form-bold').onchange = function (event) {
+document.querySelector('#form-bold').onclick = function (event) {
     event.preventDefault();
-    let doFontWeight = document.querySelector('#form-bold"]').value;
+    alert('!!!!!!!!!!!!!!!!!')
     if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
         var doFontWeight = true;
-        alert(doFontWeight);
     }
     else 
         var doFontWeight = false;
+
     localStorage.setItem('doFontWeight', doFontWeight);
     loadFontWeight('doFontWeight');
 }
 
 function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
-        changeFontWeight('.side-box-2', localStorage.getItem(localStorageKey));
+        changeBorderColor('.side-box-2', localStorage.getItem(localStorageKey));
         document.querySelector('#form-bold').checked = localStorage.getItem(localStorageKey);
     }
 }
-function changeFontWeight(block, fontWeight) {
-    document.getElementsByClassName(block).style.fontWeight = fontWeight;
+function changeBorderColor(block, fontWeight) {
     document.querySelector(block).style.fontWeight = fontWeight;
+}
 
 function swapBlocks(x,y)
 {
