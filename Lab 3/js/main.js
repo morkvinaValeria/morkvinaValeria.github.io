@@ -44,7 +44,7 @@ window.addEventListener('load', function () {
 })
 
 //task4
-//loadFontWeight('doFontWeight')
+loadFontWeight('doFontWeight')
 document.getElementById('form-bold').onchange = function (event) {
     event.preventDefault();
     if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
@@ -54,20 +54,22 @@ document.getElementById('form-bold').onchange = function (event) {
         var doFontWeight = false;
     }
     localStorage.setItem('doFontWeight', doFontWeight);
-   /* loadFontWeight('doFontWeight');*/
+    loadFontWeight('doFontWeight');
 }
 
-/*
+
 function loadFontWeight(localStorageKey) {
-    if (localStorage.getItem(localStorageKey)) {
-        changeFontWeight('.side-box-2', localStorage.getItem(localStorageKey));
+    if (localStorage.getItem(localStorageKey) = true) {
+        document.getElementsByClassName('.side-box-2').style.fontWeight = 'bold';
+        document.querySelector('#form-bold input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
+    }
+    else {
+        document.getElementsByClassName('.side-box-2').style.fontWeight = 'normal';
         document.querySelector('#form-bold input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
     }
 }
-function changeFontWeight(block, fontWeight) {
-    document.querySelector(block).style.fontWeight = fontWeight;
-}
-*/
+
+
 function swapBlocks(x,y)
 {
     let temp = document.querySelector(x).innerHTML;
