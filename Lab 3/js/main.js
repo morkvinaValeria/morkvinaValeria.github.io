@@ -46,9 +46,10 @@ window.addEventListener('load', function () {
 //task4
 document.querySelector('#form-bold').checked = function (event) {
     event.preventDefault();
-    let doFontWeight = document.querySelector('#form-bold').checked.value;
+    let doFontWeight = document.querySelector('#form-bold').checked;
 
-    localStorage.setItem('border-color', doFontWeight);
+    localStorage.setItem('doFontWeight', doFontWeight);
+    loadFontWeight('doFontWeight');
 }
 
 function swapBlocks(x,y)
