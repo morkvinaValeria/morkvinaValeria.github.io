@@ -46,7 +46,11 @@ window.addEventListener('load', function () {
 //task4
 document.querySelector('#form-bold').checked = function (event) {
     event.preventDefault();
-    let doFontWeight = document.querySelector('#form-bold').checked;
+   if (document.querySelector('#form-bold').checked) {
+        var doFontWeight = true;
+    }
+    else 
+        var doFontWeight = false;
 
     localStorage.setItem('doFontWeight', doFontWeight);
     loadFontWeight('doFontWeight');
