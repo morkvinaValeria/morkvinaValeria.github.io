@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
 //loadFontWeight('doFontWeight')
 document.getElementById('form-bold').onchange = function (event) {
     event.preventDefault();
-    if (document.querySelector('#form-bold').checked) {
+    if (document.querySelector('#form-bold > input[name="to-bold"]').checked) {
         var doFontWeight = true;
     }
     else {
@@ -62,11 +62,11 @@ function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
             document.getElementById('side-box-2').style.fontWeight = 'bold';
-            document.querySelector('#form-bold').checked = localStorage.getItem(localStorageKey);
+            document.querySelector('#form-bold > input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
         }
         else {
             document.getElementById('side-box-2').style.fontWeight = 'normal';
-            document.querySelector('#form-bold').checked = localStorage.getItem(localStorageKey);
+            document.querySelector('#form-bold > input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
         }
     }
 }
