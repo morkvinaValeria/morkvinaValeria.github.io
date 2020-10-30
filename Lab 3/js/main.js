@@ -60,7 +60,7 @@ document.getElementById('form-bold').onchange = function (event) {
 
 function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
-        if (localStorage.getItem(localStorageKey) = true) {
+        if (localStorage.getItem(localStorageKey) == true) {
             document.getElementsByClassName('.side-box-2').style.fontWeight = 'bold';
             document.querySelector('#form-bold input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
         }
