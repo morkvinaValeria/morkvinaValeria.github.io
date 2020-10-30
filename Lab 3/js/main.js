@@ -58,10 +58,10 @@ document.getElementById('form-bold').onchange = function (event) {
 }
 
 
- function loadFontWeight(localStorageKey) {
+function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
-            document.getElementById('side-box-2').style.fontWeight = 'bold';
+            changeFontWeight('side-box-2');
             document.querySelector('form-bold').setAttribute("checked");
         }
         else {
@@ -69,6 +69,10 @@ document.getElementById('form-bold').onchange = function (event) {
             document.getElementById('form-bold').removeAttribute("checked"); 
         }
     }
+}
+function changeFontWeight(block) {
+    let elem = document.getElementById(block);
+    elem.outerHTML = '<b>' + elem.innerHTML + '</b>';
 }
 
 function swapBlocks(x,y)
