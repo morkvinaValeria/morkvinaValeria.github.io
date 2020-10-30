@@ -61,16 +61,15 @@ document.getElementById('form-bold').onchange = function (event) {
 function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
-            document.getElementsByClassName('.side-box-2').style.fontWeight = 'bold';
+            document.getElementById('side-box-2').style.fontWeight = 'bold';
             document.querySelector('#form-bold input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
         }
         else {
-            document.getElementsByClassName('.side-box-2').style.fontWeight = 'normal';
+            document.getElementById('side-box-2').style.fontWeight = 'normal';
             document.querySelector('#form-bold input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
         }
     }
 }
-
 
 function swapBlocks(x,y)
 {
