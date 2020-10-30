@@ -51,7 +51,6 @@ document.querySelector('#form-bold').checked = function (event) {
         el.checked = localStorage.getItem(el.id) === "true";
     })
 
-    localStorage.setItem('doFontWeight', doFontWeight);
     loadFontWeight('doFontWeight');
 }
 
