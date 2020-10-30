@@ -47,15 +47,14 @@ window.addEventListener('load', function () {
 //loadFontWeight('doFontWeight')
 document.getElementById('form-bold').onchange = function (event) {
     event.preventDefault();
-    alert('gift');
     if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
         var doFontWeight = true;
     }
     else {
         var doFontWeight = false;
     }
-   /* localStorage.setItem('doFontWeight', doFontWeight);
-    loadFontWeight('doFontWeight');*/
+    localStorage.setItem('doFontWeight', doFontWeight);
+   /* loadFontWeight('doFontWeight');*/
 }
 
 /*
