@@ -47,7 +47,7 @@ window.addEventListener('load', function () {
 //loadFontWeight('doFontWeight')
 document.getElementById('form-bold').onchange = function (event) {
     event.preventDefault();
-    if (document.querySelector('#form-bold > input[name="to-bold"]').checked) {
+    if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
         var doFontWeight = true;
     }
     else {
@@ -58,18 +58,16 @@ document.getElementById('form-bold').onchange = function (event) {
 }
 
 
-function loadFontWeight(localStorageKey) {
-    if (localStorage.getItem(localStorageKey)) {
+  if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
             document.getElementById('side-box-2').style.fontWeight = 'bold';
-            document.querySelector('#form-bold > input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
+            document.querySelector('form-bold').setAttribute("checked");
         }
         else {
             document.getElementById('side-box-2').style.fontWeight = 'normal';
-            document.querySelector('#form-bold > input[name="to-bold"]').checked = localStorage.getItem(localStorageKey);
+            document.getElementById('form-bold').removeAttribute("checked"); 
         }
     }
-}
 
 function swapBlocks(x,y)
 {
