@@ -125,3 +125,10 @@ main {
     padding:2%;
     text-align:center;
 }
+#form-bold {
+    background-color: lightcyan;
+    width: 100%;
+    border: 2px solid gainsboro;
+    padding: 2%;
+    text-align: center;
+}
