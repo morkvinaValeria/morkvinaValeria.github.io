@@ -47,11 +47,12 @@ window.addEventListener('load', function () {
 loadFontWeight('doFontWeight')
 document.querySelector('#form-bold').checked = function (event) {
     event.preventDefault();
-    if (document.querySelector('#form-bold').checked) {
-        var doFontWeight = true;
+    var doFontWeight=false;
+    if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
+        doFontWeight = true;
     }
     else 
-        var doFontWeight = false;
+        doFontWeight = false;
 
     localStorage.setItem('doFontWeight', doFontWeight);
     loadFontWeight('doFontWeight');
