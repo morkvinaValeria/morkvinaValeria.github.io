@@ -53,11 +53,11 @@ document.getElementById('form-bold input[name="to-bold"]').onchange = function (
     else {
         var doFontWeight = false;
     }
-    localStorage.setItem('doFontWeight', doFontWeight);
-    loadFontWeight('doFontWeight');
+   /* localStorage.setItem('doFontWeight', doFontWeight);
+    loadFontWeight('doFontWeight');*/
 }
 
-
+/*
 function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
         changeFontWeight('.side-box-2', localStorage.getItem(localStorageKey));
@@ -67,7 +67,7 @@ function loadFontWeight(localStorageKey) {
 function changeFontWeight(block, fontWeight) {
     document.querySelector(block).style.fontWeight = fontWeight;
 }
-
+*/
 function swapBlocks(x,y)
 {
     let temp = document.querySelector(x).innerHTML;
