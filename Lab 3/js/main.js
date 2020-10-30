@@ -45,7 +45,7 @@ window.addEventListener('load', function () {
 
 //task4
 loadFontWeight('doFontWeight')
-document.querySelector('#form-bold').onclick = function (event) {
+document.querySelector('#form-bold input[name="to-bold"]').onclick = function (event) {
     event.preventDefault();
     alert('!!!!!!!!!!!!!!!!!')
     if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
@@ -60,11 +60,11 @@ document.querySelector('#form-bold').onclick = function (event) {
 
 function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
-        changeBorderColor('.side-box-2', localStorage.getItem(localStorageKey));
+        changeFontWeight('.side-box-2', localStorage.getItem(localStorageKey));
         document.querySelector('#form-bold').checked = localStorage.getItem(localStorageKey);
     }
 }
-function changeBorderColor(block, fontWeight) {
+function changeFontWeight(block, fontWeight) {
     document.querySelector(block).style.fontWeight = fontWeight;
 }
 
