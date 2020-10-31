@@ -51,13 +51,14 @@ if (window.localStorage) {
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
+        localStorage.setItem('check', 1);
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
     if (document.querySelector('#to-bold').checked === false) {
+        localStorage.setItem('check', 0);
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
     }
 }
-
 function swapBlocks(x,y)
 {
     let temp = document.querySelector(x).innerHTML;
