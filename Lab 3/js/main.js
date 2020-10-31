@@ -70,8 +70,7 @@ function loadFontWeight(localStorageKey) {
     }
 }
 function changeFontWeight(block) {
-    let elem = document.getElementById(block);
-    elem.outerHTML = '<b>' + elem.innerHTML + '</b>';
+     document.getElementById('side-box-2').style.fontWeight = 'bold';
 }
 
 
