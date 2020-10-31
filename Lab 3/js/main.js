@@ -48,11 +48,10 @@ if (window.localStorage) {
     if (localStorage.getItem('check') == null) { localStorage.setItem('check', false); }
     else if (localStorage.getItem('check') == false) {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
-        document.querySelector('form-bold').checked = false;
     }
     else {
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
-         document.querySelector('form-bold').checked = true;
+         document.getElementById("to-bold").setAttribute('checked','checked');
         //document.querySelector('form-bold').setAttribute("checked");
     }
 }
