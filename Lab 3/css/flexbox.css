@@ -43,6 +43,7 @@ main {
     padding: 15px;
     text-align: left;
     font-size: 18px;
+    
 }
 
 .side-box-1 {
@@ -53,6 +54,7 @@ main {
 #side-box-2 {
     width: 33%;
     min-height:32.8em;
+    font-family:Arial;
 }
 
 .side-box-1 p, #side-box-2 p {
