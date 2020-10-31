@@ -44,33 +44,20 @@ window.addEventListener('load', function () {
 })
 
 //task4
-loadFontWeight('doFontWeight');
-document.getElementById('form-bold').onchange = function (event) {
-    event.preventDefault();
-    if (document.querySelector('#form-bold input[name="to-bold"]').checked) {
-        var doFontWeight = true;
-    }
-    else {
-        var doFontWeight = false;
-    }
-    localStorage.setItem('doFontWeight', doFontWeight);
-    loadFontWeight('doFontWeight');
+if (window.localStorage) {
+    if (localStorage.getItem('check') == null) { localStorage.setItem('check', 0); }
+    else if (localStorage.getItem('check') == 0) { document.querySelector('#side-box-2').style.fontWeight = 'normal' }
+    else { document.querySelector('#side-box-2').style.fontWeight = 'bold' }
 }
-
-function loadFontWeight(localStorageKey) {
-    if (localStorage.getItem(localStorageKey)) {
-        if (localStorage.getItem(localStorageKey) == true) {
-            changeFontWeight('side-box-2');
-            document.querySelector('form-bold input[name="to-bold"]').setAttribute("checked");
-        }
-        else {
-            document.getElementById('side-box-2').style.fontWeight = 'normal';
-            document.getElementById('form-bold input[name="to-bold"]').removeAttribute("checked"); 
-        }
+function clickMeBold() {
+    if (document.querySelector('#to-bold').checked === true) {
+        localStorage.setItem('check', 1);
+        document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
-}
-function changeFontWeight(block) {
-     document.getElementById('side-box-2').style.fontWeight = 'bold';
+    if (document.querySelector('#to-bold').checked === false) {
+        localStorage.setItem('check', 0);
+        document.querySelector('#side-box-2').style.fontWeight = 'bold';
+    }
 }
 
 
