@@ -61,11 +61,11 @@ function loadFontWeight(localStorageKey) {
     if (localStorage.getItem(localStorageKey)) {
         if (localStorage.getItem(localStorageKey) == true) {
             changeFontWeight('side-box-2');
-            document.querySelector('form-bold').setAttribute("checked");
+            document.querySelector('form-bold input[name="to-bold"]').setAttribute("checked");
         }
         else {
             document.getElementById('side-box-2').style.fontWeight = 'normal';
-            document.getElementById('form-bold').removeAttribute("checked"); 
+            document.getElementById('form-bold input[name="to-bold"]').removeAttribute("checked"); 
         }
     }
 }
