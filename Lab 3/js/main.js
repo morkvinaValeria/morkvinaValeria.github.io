@@ -45,18 +45,18 @@ window.addEventListener('load', function () {
 
 //task4
 if (window.localStorage) {
-    if (localStorage.getItem('check') == null) { localStorage.setItem('check', 0); }
-    else if (localStorage.getItem('check') == 0) { document.querySelector('#side-box-2').style.fontWeight = 'normal' }
+    if (localStorage.getItem('check') == null) { localStorage.setItem('check', false); }
+    else if (localStorage.getItem('check') == false) { document.querySelector('#side-box-2').style.fontWeight = 'normal' }
     else { document.querySelector('#side-box-2').style.fontWeight = 'bold' }
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
-        localStorage.setItem('check', 1);
-        document.querySelector('#side-box-2').style.fontWeight = 'normal';
+        localStorage.setItem('check', true);
+        document.querySelector('#side-box-2').style.fontWeight = 'bold';
     }
     if (document.querySelector('#to-bold').checked === false) {
-        localStorage.setItem('check', 0);
-        document.querySelector('#side-box-2').style.fontWeight = 'bold';
+        localStorage.setItem('check', false);
+        document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
 
