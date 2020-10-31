@@ -46,8 +46,10 @@ window.addEventListener('load', function () {
 //task4
 if (window.localStorage) {
     if (localStorage.getItem('check') == null) { localStorage.setItem('check', false); }
-    else if (localStorage.getItem('check') == false) { document.querySelector('#side-box-2').style.fontWeight = 'normal' }
-    else { document.querySelector('#side-box-2').style.fontWeight = 'bold' }
+    else if (localStorage.getItem('check') == false) { document.querySelector('#side-box-2').style.fontWeight = 'normal';  
+                                                       document.getElementById('form-bold').removeAttribute("checked");}
+    else { document.querySelector('#side-box-2').style.fontWeight = 'bold';
+           document.querySelector('form-bold').setAttribute("checked");}
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
