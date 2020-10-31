@@ -66,7 +66,6 @@ function clickMeBold() {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
-}
 
 function swapBlocks(x,y)
 {
