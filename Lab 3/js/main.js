@@ -49,10 +49,12 @@ if (window.localStorage) {
     else if (localStorage.getItem('check') == false) {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
-    else {
+    else if (localStorage.getItem('check') == true) {
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
-         document.getElementById("to-bold").setAttribute('checked','checked');
-        //document.querySelector('form-bold').setAttribute("checked");
+        document.getElementById("to-bold").setAttribute('checked','checked');
+    }
+    else {
+        document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
 function clickMeBold() {
