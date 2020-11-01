@@ -1,6 +1,11 @@
 // 1 task
 button.onclick = function () { swapBlocks('header  h1', 'footer h1') };
-
+function swapBlocks(x,y)
+{
+    let temp = document.querySelector(x).innerHTML;
+    document.querySelector(x).innerHTML = document.querySelector(y).innerHTML;
+    document.querySelector(y).innerHTML = temp;
+}
 // 2 task
 document.querySelector('.main-cell img').onclick = function () {
 
@@ -9,7 +14,9 @@ document.querySelector('.main-cell img').onclick = function () {
     document.querySelector('.main-cell #result').textContent +=
         ' S = ' + areaOfRectangle(side1, side2);
 };
-
+function areaOfRectangle(side1, side2) {
+    return side1 * side2;
+}
 // 3 task
 document.querySelector('#form-min-max').onsubmit = function (event) {
     event.preventDefault();
@@ -43,6 +50,14 @@ window.addEventListener('load', function () {
     }
 })
 
+function getCookie(cname) {
+    let cookies = document.cookie.split(';');
+    for (let i = 0; i < cookies.length; i++)
+        if (cookies[i].trim().split('=')[0] == cname)
+            return cookies[i].trim().split('=')[1];
+    return null;
+}
+
 //task4
 if (window.localStorage) {
     if (localStorage.getItem('to-bold') == null) { localStorage.setItem('to-bold', 'false'); }
@@ -57,7 +72,7 @@ if (window.localStorage) {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
-function clickMeBold() {
+function changeFontWeight() {
     if (document.querySelector('#to-bold').checked === true) {
         localStorage.setItem('to-bold', 'true');
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
@@ -67,21 +82,15 @@ function clickMeBold() {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
-
-function swapBlocks(x,y)
-{
-    let temp = document.querySelector(x).innerHTML;
-    document.querySelector(x).innerHTML = document.querySelector(y).innerHTML;
-    document.querySelector(y).innerHTML = temp;
+//task5
+document.getElementById('inp').onfocus = function () { inpFocus('inp') };
+document.getElementById('inp').onblur = function () { inpBlur('inp') };
+function inpFocus(block) {
+    document.getElementById(block).style.backgroundColor = "pink";
+    inp.value = 'Focus is here';
 }
-
-function areaOfRectangle(side1, side2) {
-    return side1 * side2;
-}
-function getCookie(cname) {
-    let cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++)
-        if (cookies[i].trim().split('=')[0] == cname)
-            return cookies[i].trim().split('=')[1];
-    return null;
+function inpBlur(block) {
+    inp.value = 'Focus has been lost';
+    document.getElementById(block).style.backgroundColor = "lightgoldenrodyellow";
+    
 }
