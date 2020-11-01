@@ -59,11 +59,11 @@ if (window.localStorage) {
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
-        localStorage.setItem('check', 'true');
+        localStorage.setItem('to-bold', 'true');
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
     }
     if (document.querySelector('#to-bold').checked === false) {
-        localStorage.setItem('check', 'false');
+        localStorage.setItem('to-bold', 'false');
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
