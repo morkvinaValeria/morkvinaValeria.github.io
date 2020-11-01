@@ -45,11 +45,11 @@ window.addEventListener('load', function () {
 
 //task4
 if (window.localStorage) {
-    if (localStorage.getItem('check') == null) { localStorage.setItem('check', false); }
-    else if (localStorage.getItem('check') == false) {
+    if (localStorage.getItem('to-bold') == null) { localStorage.setItem('to-bold', 'false'); }
+    else if (localStorage.getItem('to-bold') == 'false') {
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
-    else if (localStorage.getItem('check') == true) {
+    else if (localStorage.getItem('to-bold') == 'true') {
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
         document.getElementById("to-bold").setAttribute('checked','checked');
     }
@@ -59,11 +59,11 @@ if (window.localStorage) {
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
-        localStorage.setItem('check', true);
+        localStorage.setItem('check', 'true');
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
     }
     if (document.querySelector('#to-bold').checked === false) {
-        localStorage.setItem('check', false);
+        localStorage.setItem('check', 'false');
         document.querySelector('#side-box-2').style.fontWeight = 'normal';
     }
 }
