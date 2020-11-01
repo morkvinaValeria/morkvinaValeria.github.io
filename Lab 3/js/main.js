@@ -53,6 +53,9 @@ if (window.localStorage) {
         document.querySelector('#side-box-2').style.fontWeight = 'bold';
         document.getElementById("to-bold").setAttribute('checked','checked');
     }
+     else {
+        document.querySelector('#side-box-2').style.fontWeight = 'normal';
+    }
 }
 function clickMeBold() {
     if (document.querySelector('#to-bold').checked === true) {
