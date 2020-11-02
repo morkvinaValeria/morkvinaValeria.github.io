@@ -1,5 +1,4 @@
 // 1 task
-button.onclick = function () { swapBlocks('header  h1', 'footer h1') };
 function swapBlocks(x, y) {
     let temp = document.querySelector(x).innerHTML;
     document.querySelector(x).innerHTML = document.querySelector(y).innerHTML;
