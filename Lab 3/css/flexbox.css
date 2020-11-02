@@ -1,4 +1,4 @@
-﻿* {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,12 +38,11 @@ main {
     justify-content: space-between;
 }
 
-.side-box-1, #side-box-2 {
+.side-box-1, .side-box-2 {
     background-color: #f0f8ff;
     padding: 15px;
     text-align: left;
     font-size: 18px;
-    
 }
 
 .side-box-1 {
@@ -51,13 +50,12 @@ main {
     width:25.5%;
 }
 
-#side-box-2 {
+.side-box-2 {
     width: 33%;
     min-height:32.8em;
-    font-family:Arial;
 }
 
-.side-box-1 p, #side-box-2 p {
+.side-box-1 p, .side-box-2 p {
     margin-bottom: 10px;
 }
 
@@ -100,7 +98,7 @@ main {
 }
 .main-cell img {
     width: 470px;
-    margin: 50px 0 30px 80px;
+    margin: 0 0 30px 80px;
 }
 
 .main-cell span {
@@ -133,4 +131,35 @@ main {
     border: 2px solid gainsboro;
     padding: 2%;
     text-align: center;
+    
+}
+
+header .html-form, footer .html-form {
+    margin-top: 3%;
+}
+.side-box-1 .html-form, .side-box-2 .html-form {
+    margin-left:20%;
+}
+.main-cell .html-form{
+    margin-left:40%;
+}
+.menu-cell .html-form{
+    float:left;
+    margin-left:1%;
+}
+.html-form textarea {
+    background-color: mintcream;
+}
+.html-form button {
+    color:lightseagreen;
+}
+.editArea {
+    margin-top: 0.5em;
+    width: 100%;
+    height: 8em;
+    resize: none;
+}
+
+.editBtn, .submitBtn {
+    width: 100%;
 }
