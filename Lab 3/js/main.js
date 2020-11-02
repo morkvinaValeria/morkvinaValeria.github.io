@@ -1,11 +1,11 @@
 // 1 task
 button.onclick = function () { swapBlocks('header  h1', 'footer h1') };
-function swapBlocks(x,y)
-{
+function swapBlocks(x, y) {
     let temp = document.querySelector(x).innerHTML;
     document.querySelector(x).innerHTML = document.querySelector(y).innerHTML;
     document.querySelector(y).innerHTML = temp;
 }
+
 // 2 task
 document.querySelector('.main-cell img').onclick = function () {
 
@@ -17,15 +17,17 @@ document.querySelector('.main-cell img').onclick = function () {
 function areaOfRectangle(side1, side2) {
     return side1 * side2;
 }
+
+
 // 3 task
 document.querySelector('#form-min-max').onsubmit = function (event) {
     event.preventDefault();
-    let max = Math.max.apply(Math,document.querySelector('#form-min-max input[name="to-find-min-max"]').value.split(" "));
+    let max = Math.max.apply(Math, document.querySelector('#form-min-max input[name="to-find-min-max"]').value.split(" "));
     let min = Math.min.apply(Math, document.querySelector('#form-min-max input[name="to-find-min-max"]').value.split(" "));
     document.cookie = 'max =' + max;
     document.cookie = 'min =' + min;
     document.querySelector('#form-min-max').reset();
-    alert('MAX = '+max + ', MIN = '+ min);
+    alert('MAX = ' + max + ', MIN = ' + min);
 }
 window.addEventListener('load', function () {
     if (getCookie('max')) {
@@ -49,7 +51,6 @@ window.addEventListener('load', function () {
         }, 100);
     }
 })
-
 function getCookie(cname) {
     let cookies = document.cookie.split(';');
     for (let i = 0; i < cookies.length; i++)
@@ -62,26 +63,27 @@ function getCookie(cname) {
 if (window.localStorage) {
     if (localStorage.getItem('to-bold') == null) { localStorage.setItem('to-bold', 'false'); }
     else if (localStorage.getItem('to-bold') == 'false') {
-        document.querySelector('#side-box-2').style.fontWeight = 'normal';
+        document.querySelector('.side-box-2').style.fontWeight = 'normal';
     }
     else if (localStorage.getItem('to-bold') == 'true') {
-        document.querySelector('#side-box-2').style.fontWeight = 'bold';
-        document.getElementById("to-bold").setAttribute('checked','checked');
+        document.querySelector('.side-box-2').style.fontWeight = 'bold';
+        document.getElementById("to-bold").setAttribute('checked', 'checked');
     }
-     else {
-        document.querySelector('#side-box-2').style.fontWeight = 'normal';
+    else {
+        document.querySelector('.side-box-2').style.fontWeight = 'normal';
     }
 }
 function changeFontWeight() {
     if (document.querySelector('#to-bold').checked === true) {
         localStorage.setItem('to-bold', 'true');
-        document.querySelector('#side-box-2').style.fontWeight = 'bold';
+        document.querySelector('.side-box-2').style.fontWeight = 'bold';
     }
     if (document.querySelector('#to-bold').checked === false) {
         localStorage.setItem('to-bold', 'false');
-        document.querySelector('#side-box-2').style.fontWeight = 'normal';
+        document.querySelector('.side-box-2').style.fontWeight = 'normal';
     }
 }
+
 //task5
 document.getElementById('inp').onfocus = function () { inpFocus('inp') };
 document.getElementById('inp').onblur = function () { inpBlur('inp') };
@@ -92,5 +94,49 @@ function inpFocus(block) {
 function inpBlur(block) {
     inp.value = 'Focus has been lost';
     document.getElementById(block).style.backgroundColor = "lightgoldenrodyellow";
-    
 }
+
+//6 task
+document.addEventListener('DOMContentLoaded', () => {
+    makeEditableBlock('side-box-2-c');
+    makeEditableBlock('main-cell-c');
+    makeEditableBlock('menu-cell-c');
+    makeEditableBlock('side-box-1-c');
+    initEditableBlocks();
+})
+
+const initEditableBlocks = () => { 
+    Array.from(document.getElementsByClassName('editArea')).map((area) => {
+        area.addEventListener('change', (event) => {
+            const newContent = event.target.value;
+            if (isValidHTML(newContent)) {
+                localStorage.setItem(`${event.target.parentNode.id}Content`, newContent);
+                event.target.parentNode.children[0].innerHTML = newContent;
+            }
+            else {
+                localStorage.removeItem(`${event.target.parentNode.id}Content`);
+                document.location.reload();
+            }
+        })
+    })
+    Array.from(document.getElementsByClassName('editBtn')).map((btn) => {
+        btn.addEventListener('click', (event) => {
+            localStorage.removeItem(`${event.target.parentNode.id}Content`);
+            document.location.reload();
+        })
+    })
+}
+const makeEditableBlock = (blockId) => {
+    const content = localStorage.getItem(`${blockId}Content`) ?
+        localStorage.getItem(`${blockId}Content`) :
+        document.getElementById(blockId).innerHTML;
+    document.getElementById(blockId).innerHTML = content;
+    document.getElementById(blockId).insertAdjacentHTML('beforeend',
+        `<textarea class="editArea">${content}</textarea>
+  <button type="submit" class="editBtn">Return</button>`)
+}
+const isValidHTML = (html) => {
+    const doc = document.createElement('div');
+    doc.innerHTML = html;
+    return doc.innerHTML === html;
+};
