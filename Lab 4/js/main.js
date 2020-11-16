@@ -13,10 +13,10 @@ async function changeContentWithDelay(contentBlockNames, delay = 0) {
         blocks.push(document.querySelector(block).innerHTML);
     });
     for (let index = 0; index < blocks.length - 1; index++) {
-        await sleep(delay);
+        await sleep(delay + 5000*index);
         document.querySelector(contentBlockNames[index + 1]).innerHTML = blocks[index];
     }
-    await sleep(delay);
+    await sleep(15000);
     document.querySelector(contentBlockNames[0]).innerHTML = blocks[blocks.length - 1];
 }
 function sleep(ms) {
@@ -28,7 +28,6 @@ function ChangeFontWeightWithDelay(delay) {
     setInterval(() => {
         var blockContent = document.getElementById('main-cell');
         blockContent.style.fontWeight == 'bold' ? blockContent.style.fontWeight = 'normal' : blockContent.style.fontWeight='bold';
-       // blockContent.style.fontWeight == 'normal' ? blockContent.style.fontWeight = 'bold' : blockContent.style.fontWeight = 'normal';
     }, delay);
 }
 function inpFocus(block) {
@@ -166,7 +165,7 @@ function createFormForSort(blockName) {
 }
 function displayList() {
     let listOfValues = document.querySelector('#form-sort > input[name="list-of-values"]').value;
-    let regex = /\d/g
+    let regex = /\d+/g
     let matches = listOfValues.match(regex);
     if (matches != null) {
         let items = matches.map(Number);
@@ -216,4 +215,3 @@ function quickSort(items, left, right) {
     }
     return items;
 }
-
